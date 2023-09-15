@@ -1,0 +1,92 @@
+.sideBarButton {
+  color: #fff;
+  background-color: #5d6cc5;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  width: 5vw;
+  height: 4vw;
+}
+
+.sideBarButton:hover {
+  background-color: #555555;
+  color: black;
+}
+
+.MuiDrawer-paper {
+  width: 250px; /* Adjust the width of the sidebar as needed */
+  position: absolute;
+
+  background-color: #3d3d3d; /* Adjust the background color as needed */
+}
+
+.MuiListItemText-root {
+  color: #ffffff; /* Adjust the color of the list items as needed */
+}
+.MuiList-root {
+  border-bottom: black 2px solid;
+  padding-top: 0;
+}
+/* Styling for the profile container */
+.profile-container {
+  display: flex;
+  border-bottom: black 2px solid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Styling for the user avatar */
+.user-avatar {
+  width: 8rem;
+  height: 11rem;
+  border-radius: 30%;
+  margin-bottom: 10px;
+}
+
+/* Styling for the profile link (to remove default link styles) */
+.profile-link {
+  text-decoration: none;
+  color: inherit;
+}
+.profile-bgc {
+  background-color: #4a4a4a;
+}
+.chats-name {
+  color: white;
+}
+/* Your provided styles remain unchanged... */
+
+.chat-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #f5f5f5;
+}
+
+.chat-name {
+  font-weight: bold;
+}
+
+.username {
+  text-align: center;
+  margin-top: 10px;
+}

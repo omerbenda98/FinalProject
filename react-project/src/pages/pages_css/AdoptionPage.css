@@ -1,0 +1,15 @@
+.AdoptionPageHeader {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.adoption-container {
+  height: 100%;
+
+  padding-bottom: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

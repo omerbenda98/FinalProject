@@ -1,0 +1,41 @@
+/* AdoptionPage.css */
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.adoption-container h4,
+.adoption-container h5 {
+  margin-bottom: 20px;
+}
+
+.adoption-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.adoption-container li {
+  margin: 10px 0;
+}
+
+.adoption-container .MuiCard-root {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.adoption-container .MuiCard-root:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip styling */
+.adoption-container .MuiTooltip-tooltip {
+  background-color: #555;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
