@@ -1,74 +1,58 @@
-# Getting Started with Create React App
+# Dog Adoption Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Welcome to our Dog Adoption Website, a platform where potential adopters can connect with business users who are looking to find new homes for dogs. Our website not only facilitates the adoption process but also provides an extensive directory of various dog breeds, curated through an external API.
 
-In the project directory, you can run:
+Whether you are looking to adopt or put up a dog for adoption, our platform serves as the perfect bridge to meet your needs, featuring functionalities like real-time chat with chat history storage, breed exploration, and more. 
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before you begin, ensure you have installed the following:
+- Node.js
+- npm
+- MongoDB (local setup for development environment)
 
-### `npm test`
+### Installation & Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the necessary packages by running the following command ---->  npm install
+4. To start the project in a development environment with a local MongoDB setup, use the following command ---->  npm run dev
+   Alternatively, for a production environment setup with a MongoDB cluster, use: ---->  npm start
+5. Next, navigate to the React application directory and start the React app using: ---->  npm start
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Upon starting the application in the production environment, initial data consisting of three cards and three users (admin, business, and normal users) will be created automatically.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Our project utilizes a stack of modern technologies to deliver a seamless experience. These technologies are categorized as follows:
 
-### `npm run eject`
+### Frontend
+- React: A JavaScript library for building user interfaces.
+- Redux: A Predictable State Container for JS Apps.
+- MUI: A comprehensive React UI framework.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend
+- Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- Express: A minimal and flexible Node.js web application framework.
+- MongoDB: A source-available cross-platform document-oriented database program.
+- Socket.io: A JavaScript library for real-time web applications.
+- External API: Utilized to retrieve detailed information about various dog breeds.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Routing
+- React Router DOM: A dynamic, client-side routing library for React, enabling the creation of single-page applications with navigation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Features
+- User Registration: Users can register as either adopters or business users.
+- Dog Breed Exploration: Users can explore an extensive list of dog breeds retrieved from an external API on the home page.
+- Dog Adoption Cards: Business users can create, edit, and delete dog adoption cards.
+- Real-Time Chat: Enables users to communicate in real time, with chat histories saved to the database.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+We hope our website makes the process of dog adoption smoother and happier for both the adopters and the ones putting up the dogs for adoption. Feel free to contribute and suggest improvements.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Link to slides
-
-[Click here](https://docs.google.com/presentation/d/1Nof_WWcg-Tg_jncJvnNKR7JJ9GIfZ7U-kgOvqQzeKj8/edit?usp=sharing)
