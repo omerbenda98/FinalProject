@@ -75,7 +75,6 @@ function BreedPage() {
           {breedInfo.weight &&
             `Imperial: ${breedInfo.weight.imperial}, Metric: ${breedInfo.weight.metric}`}
         </p>
-        <button className="breed-button">Learn more</button>
       </div>
     </div>
   );

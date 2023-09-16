@@ -83,6 +83,10 @@ app.post("/api/upload", upload.single("profilePic"), (req, res) => {
 initialData();
 app.use(express.static("public"));
 app.use("/uploads", express.static("uploads"));
+// app.use(
+//   "/images",
+//   express.static('"http://localhost:3000/initialData/images" data/images')
+// );
 
 app.use(morgan(chalk.cyan(":method :url :status :response-time ms")));
 app.use(cors());

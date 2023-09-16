@@ -62,9 +62,6 @@ const CRMPage = () => {
       )
     );
   };
-  const handleUserInfo = (user) => {
-    setSelectedUser(user);
-  };
 
   if (!allUsers) {
     return <Loader />;
@@ -198,18 +195,6 @@ const CRMPage = () => {
                   height: { lg: "5rem" },
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="warning"
-                  sx={{
-                    width: { xs: "100%", md: "", lg: "20%" },
-                    mb: { xs: 1, md: 0, lg: 0 },
-                    mr: 8,
-                  }}
-                  onClick={() => handleUserInfo(user)}
-                >
-                  See more
-                </Button>
                 {!user.isAdmin && (
                   <Button
                     variant="contained"

@@ -1,16 +1,8 @@
 .charity-card {
   height: 300px;
   width: 96%;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   background-color: #4158d0;
-  /* background-image: linear-gradient(
-    43deg,
-    #86c990 0%,
-    #b9d08c 46%,
-    #77c4ae 100%
-  ); */
-  /* background-image: url("/public/ASPCA.jpg"); */
-
   border-radius: 8px;
   color: white;
   overflow: hidden;
@@ -19,7 +11,6 @@
   perspective: 1000px;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
-  /* margin-left: 2rem; */
   margin-bottom: 1rem;
 }
 
@@ -137,4 +128,9 @@
 .type1:hover::after {
   visibility: visible;
   transform: scale(100) translateX(2px);
+}
+@media (max-width: 768px) {
+  .charity-card {
+    height: 100%;
+  }
 }

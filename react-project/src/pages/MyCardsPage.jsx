@@ -60,24 +60,24 @@ const MyCardsPage = () => {
       <Typography variant="h3" sx={{ textAlign: "center" }} className="neon">
         My Cards
       </Typography>
+      <IconButton onClick={handleNavigate}>
+        <AddCircleIcon
+          color="success"
+          sx={{
+            fontSize: 80,
+          }}
+        />
+        <Typography>Add New Card</Typography>
+      </IconButton>
       {!userData === true ? (
         <Typography variant="h5" sx={{ textAlign: "center" }} className="neon">
           No cards created. Click add button below to add cards.
         </Typography>
       ) : (
         <div className="mycards-container">
-          <Grid container spacing={2}>
+          <Grid container spacing={2} className="mycards-grid">
             {userData.map((item) => (
-              <Grid
-                item
-                xs={10}
-                md={6}
-                lg={3}
-                sx={{
-                  ml: { xs: 0, lg: 4, md: 0 },
-                }}
-                key={item._id + Date.now()}
-              >
+              <Grid item xs={10} md={6} lg={3} key={item._id + Date.now()}>
                 <AdoptionCard
                   name={item.name}
                   age={item.age}
@@ -98,14 +98,6 @@ const MyCardsPage = () => {
           </Grid>
         </div>
       )}
-      <IconButton onClick={handleNavigate}>
-        <AddCircleIcon
-          color="success"
-          sx={{
-            fontSize: 80,
-          }}
-        />
-      </IconButton>
     </Fragment>
   );
 };

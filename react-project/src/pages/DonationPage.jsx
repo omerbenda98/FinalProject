@@ -42,7 +42,7 @@ function DonationPage() {
   return (
     <div className="donation-container">
       <div className="top-container">
-        <img src="./petanimation2.png" />
+        <img src="./petanimation2.png" className="pet-animation" />
         <div className="donation-form">
           <h2>Donate to our cause</h2>
           <p>Select a donation amount:</p>
@@ -62,20 +62,22 @@ function DonationPage() {
             </button>
           </form>
         </div>
-        <img src="./petanimation.png" />
+        <img src="./petanimation.png" className="pet-animation" />
       </div>
-      {charities.map((charity, index) => (
-        <CharityCards
-          key={index}
-          name={charity[0]}
-          country={charity[1]}
-          description={charity[2]}
-          url={charity[3]}
-          style={{
-            backgroundImage: `url(${charity[4]})`,
-          }}
-        />
-      ))}
+      <div className="charity-cards-container">
+        {charities.map((charity, index) => (
+          <CharityCards
+            key={index}
+            name={charity[0]}
+            country={charity[1]}
+            description={charity[2]}
+            url={charity[3]}
+            style={{
+              backgroundImage: `url(${charity[4]})`,
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }

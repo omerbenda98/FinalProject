@@ -9,7 +9,6 @@ const ROUTES = {
   LOGOUT: "/logout",
   MYCARDS: "/myCards",
   CRM: "/crm",
-  USERINFO: "/userInfo",
   ADOPTION: "/adoption",
   CHAT: "/chats",
   DONATION: "/donation",

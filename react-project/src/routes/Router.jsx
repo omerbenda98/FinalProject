@@ -13,7 +13,6 @@ import MyCardsPage from "../pages/MyCardsPage";
 import CreateCardPage from "../pages/CreateCardPage";
 import CRMpage from "../pages/CRMpage";
 import MoreInfoPage from "../pages/MoreInfoPage";
-import UserInfoPage from "../pages/UserInfoPage";
 import AdoptionPage from "../pages/AdoptionPage";
 import BreedPage from "../pages/BreedPage";
 import ChatPage from "../pages/ChatPage";
@@ -24,7 +23,6 @@ const Router = () => {
     <Routes>
       <Route path={ROUTES.HOME} element={<HomePage />} />
       <Route path={ROUTES.ABOUT} element={<AboutPage />} />
-      <Route path={ROUTES.USERINFO} element={<UserInfoPage />} />
       <Route path={ROUTES.FAKEHOME} element={<Navigate to={ROUTES.HOME} />} />
       <Route path="/breed/:breed" element={<BreedPage />} />
       <Route path="/chats/:tokenId/:userId" element={<ChatPage />} />

@@ -1,6 +1,11 @@
 .donation-container {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+.charity-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .donation-container h2 {
   text-align: center;
@@ -71,4 +76,13 @@
 
 .donation-container img {
   height: 40vh;
+}
+@media (max-width: 768px) {
+  .pet-animation {
+    display: none;
+  }
+  .charity-cards-container {
+    padding: 0;
+    margin: 0;
+  }
 }

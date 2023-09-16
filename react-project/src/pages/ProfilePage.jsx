@@ -45,37 +45,13 @@ const ProfilePage = () => {
     handleFileChange(event);
   };
 
-  // const handleUpload = async () => {
-  //   let newImageUrl = null;
-
-  //   if (file) {
-  //     const formData = new FormData();
-  //     formData.append("profilePic", file);
-
-  //     // Make an axios POST request to upload the image
-  //     try {
-  //       const response = await axios.post("/upload", formData, {
-  //         headers: {
-  //           "Content-Type": "multipart/form-data",
-  //         },
-  //       });
-  //       newImageUrl = response.data.imageUrl;
-  //       setInputState((prev) => ({ ...prev, imageUrl: newImageUrl }));
-  //       setUserInfo((prevState) => ({ ...prevState, imageUrl: newImageUrl }));
-  //     } catch (error) {
-  //       console.error("Error uploading file:", error);
-  //     }
-  //   }
-
-  //   return newImageUrl; // return the new URL or null if no file was uploaded
-  // };
   const handleSaveProfile = async () => {
     try {
-      const uploadedImageUrl = await handleFileUpload(); // get the newly uploaded image URL
+      const uploadedImageUrl = await handleFileUpload();
 
       const profileData = uploadedImageUrl
         ? { ...inputState, imageUrl: uploadedImageUrl }
-        : inputState; // Use the new image URL if it exists
+        : inputState;
 
       const joiResponse = validateProfileSchema(profileData);
       setInputsErrorsState(joiResponse);
@@ -158,8 +134,6 @@ const ProfilePage = () => {
       phone: "",
       email: "",
       password: "",
-      // imageUrl: "",
-      // imageAlt: "",
       state: "",
       country: "",
       city: "",
@@ -280,43 +254,6 @@ const ProfilePage = () => {
                 )}
               </Grid>
 
-              {/* <Grid item xs={6}>
-                <TextField
-                  name="imageUrl"
-                  label="ImgUrl"
-                  type="imageUrl"
-                  id="imageUrl"
-                  autoComplete="imageUrl"
-                  value={inputState.imageUrl}
-                  onChange={handleInputChange}
-                />
-                {inputsErrorsState && inputsErrorsState.imageUrl && (
-                  <Alert severity="warning">
-                    {inputsErrorsState.imageUrl.map((item) => (
-                      <div key={"imgUrl-errors" + item}>{item}</div>
-                    ))}
-                  </Alert>
-                )}
-              </Grid>
-
-              <Grid item xs={6}>
-                <TextField
-                  name="imageAlt"
-                  label="ImgAlt"
-                  type="imageAlt"
-                  id="imageAlt"
-                  autoComplete="imageAlt"
-                  value={inputState.imageAlt}
-                  onChange={handleInputChange}
-                />
-                {inputsErrorsState && inputsErrorsState.imageAlt && (
-                  <Alert severity="warning">
-                    {inputsErrorsState.imageAlt.map((item) => (
-                      <div key={"imgAlt-errors" + item}>{item}</div>
-                    ))}
-                  </Alert>
-                )}
-              </Grid> */}
               <Grid item xs={6}>
                 <TextField
                   name="state"

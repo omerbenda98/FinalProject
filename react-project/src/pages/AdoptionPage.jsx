@@ -56,7 +56,7 @@ const AdoptionPage = () => {
         </Typography>
       </Box>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={10}>
         {cardsArr.map((item) => (
           <Grid
             item

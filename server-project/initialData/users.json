@@ -9,6 +9,8 @@
     "city": "NY",
     "street": "123 Street",
     "houseNumber": "45A",
+    "imageUrl": "http://localhost:3000/images/initialUserImage1.jpg",
+    "imageAlt": "initial User 1",
     "biz": false,
     "isAdmin": true
   },
@@ -22,6 +24,8 @@
     "city": "NY",
     "street": "123 Street",
     "houseNumber": "45A",
+    "imageUrl": "http://localhost:3000/images/initialUserImage2.jpg",
+    "imageAlt": "initial User 2",
     "biz": false,
     "isAdmin": false
   },
@@ -35,6 +39,8 @@
     "city": "NY",
     "street": "123 Street",
     "houseNumber": "45A",
+    "imageUrl": "http://localhost:3000/images/initialUserImage3.jpg",
+    "imageAlt": "initial User 3",
     "biz": true,
     "isAdmin": false
   }

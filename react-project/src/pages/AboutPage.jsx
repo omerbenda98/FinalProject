@@ -1,21 +1,15 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Tooltip from "@mui/material/Tooltip";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import IconButton from "@mui/material/IconButton";
 import "./pages_css/AboutUsPage.css";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useNavigate } from "react-router-dom";
+import ROUTES from "../routes/ROUTES";
 
 const AboutUsPage = () => {
+  const navigate = useNavigate();
+  const handleNavigate = (route) => {
+    navigate(route);
+  };
   const exampleImage =
     "https://images.unsplash.com/photo-1682001426601-c7fdc9ea5b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60";
 
@@ -98,17 +92,6 @@ const AboutUsPage = () => {
         </Typography>
 
         <Typography variant="h5" gutterBottom>
-          Example Dog Image
-        </Typography>
-        <Box sx={{ my: 4 }}>
-          <CardMedia
-            component="img"
-            height="340"
-            image={exampleImage}
-            alt="Dog Example"
-          />
-        </Box>
-        <Typography variant="h5" gutterBottom>
           How It Works
         </Typography>
         <Typography variant="body1" paragraph>
@@ -116,27 +99,27 @@ const AboutUsPage = () => {
           functions:
         </Typography>
         <ul>
-          <li>
+          <li onClick={() => handleNavigate(ROUTES.REGISTER)}>
             <Typography variant="body1">
               <strong>Register:</strong> Sign up as an adopter or someone
               looking to put a dog up for adoption.
             </Typography>
           </li>
-          <li>
+          <li onClick={() => handleNavigate(ROUTES.CREATE)}>
             <Typography variant="body1">
               <strong>Create a Card:</strong> If you're putting up a dog for
               adoption, create a card with the dog's details and a lovely
               picture. This will be visible to potential adopters.
             </Typography>
           </li>
-          <li>
+          <li onClick={() => handleNavigate(ROUTES.ADOPTION)}>
             <Typography variant="body1">
               <strong>Adoption Page:</strong> As an adopter, browse through the
               list of dogs available for adoption. Found your future furry
               friend? Click 'Adopt' to initiate the process.
             </Typography>
           </li>
-          <li>
+          <li onClick={() => handleNavigate(ROUTES.ADOPTION)}>
             <Typography variant="body1">
               <strong>Chat:</strong> Once you click 'Adopt', you'll be directed
               to a chat room with the person who put the dog up for adoption.

@@ -8,10 +8,7 @@
     "city": "NY",
     "phone": "1234567890",
     "email": "card1@example.com",
-    "image": {
-      "url": "https://example.com/image1.jpg",
-      "alt": "Alt text for image1"
-    }
+    "imageUrl": "http://localhost:3000/images/initialDog1.jpg"
   },
   {
     "name": "Card2",
@@ -22,10 +19,7 @@
     "city": "NY",
     "phone": "1234567890",
     "email": "card1@example.com",
-    "image": {
-      "url": "https://example.com/image1.jpg",
-      "alt": "Alt text for image1"
-    }
+    "imageUrl": "http://localhost:3000/images/initialDog2.jpg"
   },
   {
     "name": "Card3",
@@ -36,9 +30,6 @@
     "city": "NY",
     "phone": "1234567890",
     "email": "card1@example.com",
-    "image": {
-      "url": "https://example.com/image1.jpg",
-      "alt": "Alt text for image1"
-    }
+    "imageUrl": "http://localhost:3000/images/initialDog3.jpg"
   }
 ]
