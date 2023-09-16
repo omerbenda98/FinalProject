@@ -35,16 +35,15 @@ Our project utilizes a stack of modern technologies to deliver a seamless experi
 - React: A JavaScript library for building user interfaces.
 - Redux: A Predictable State Container for JS Apps.
 - MUI: A comprehensive React UI framework.
+- React Router DOM: A dynamic, client-side routing library for React, enabling the creation of single-page applications with navigation.
 
 ### Backend
 - Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
 - Express: A minimal and flexible Node.js web application framework.
-- MongoDB: A source-available cross-platform document-oriented database program.
-- Socket.io: A JavaScript library for real-time web applications.
+- MongoDB: Used as the database to save users,cards and chats.
+- Socket.io: A JavaScript library for real-time chat in web applications.
 - External API: Utilized to retrieve detailed information about various dog breeds.
 
-### Routing
-- React Router DOM: A dynamic, client-side routing library for React, enabling the creation of single-page applications with navigation.
 
 ## Features
 - User Registration: Users can register as either adopters or business users.
