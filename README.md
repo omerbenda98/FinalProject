@@ -31,22 +31,30 @@ Upon starting the application in the production environment, initial data consis
 
 Our project utilizes a stack of modern technologies to deliver a seamless experience. These technologies are categorized as follows:
 
-### Frontend
-- React: A JavaScript library for building user interfaces.
-- Redux: A Predictable State Container for JS Apps.
+### Frontend - React
+- Redux: Used for authentication.
 - MUI: A comprehensive React UI framework.
-- React Router DOM: A dynamic, client-side routing library for React, enabling the creation of single-page applications with navigation.
+- React Router DOM: Used for routing and navigating between pages.
+- Validation: Use joi library for validation.
+- Token: using JWT library for token.
 
-### Backend
-- Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+### Backend - Node.js
 - Express: A minimal and flexible Node.js web application framework.
 - MongoDB: Used as the database to save users,cards and chats.
 - Socket.io: A JavaScript library for real-time chat in web applications.
-- External API: Utilized to retrieve detailed information about various dog breeds.
-
+- Multer: a user can upload a file for his profile image or his cards images using multer.
 
 ## Features
+- CRM Page: An admin user can delete other users or change their business status.
+- Profile Page: A registered user can access and his profile using the sidebar profile section or the navbar.
+- Charities And Donation Page: Users can list an amount to donate and explore different dog charaties.
+- See More Page: When clicking on a breed it will dynamicaly move to the breeds page.
 - User Registration: Users can register as either adopters or business users.
+- Sidebar: The sidebar contains the users name, image and a list of active chats which he can access.
+- Search Bar: users can search a breed by name.
+- Displays: users can pick between 3 types of displays: cards, list, slide.
+- External API: Utilized to retrieve detailed information about various dog breeds.
 - Dog Breed Exploration: Users can explore an extensive list of dog breeds retrieved from an external API on the home page.
 - Dog Adoption Cards: Business users can create, edit, and delete dog adoption cards.
 - Real-Time Chat: Enables users to communicate in real time, with chat histories saved to the database.
