@@ -12,16 +12,31 @@ Whether you are looking to adopt or put up a dog for adoption, our platform serv
 
 1. Clone the repository to your local machine.
 2. Navigate to the project directory.
-3. Install the necessary packages by running the following command ---->  npm install
-4. To start the project in a development environment with a local MongoDB setup, use the following command ---->  npm run dev
-   Alternatively, for a production environment setup with a MongoDB cluster, use: ---->  npm start
-5. Next, navigate to the React application directory and start the React app using: ---->  npm start
+3. Install the necessary packages by running the following command 
+```
+  npm install
+```
+4. To start the project in a development environment with a local MongoDB setup, use the following command
+```
+  npm run dev
+```
+ Alternatively, for a production environment setup with a MongoDB cluster, use:
+```
+  npm start
+```
+5. Next, navigate to the React application directory and start the React app using:
 
+```
+  npm start
+```
 Upon starting the application in the production environment, initial data consisting of three cards and three users (admin, business, and normal users) will be created automatically.
 
 to sign in use one of the emails:
+
 john@gmail.com  =  business user (the 3 initial cards owner)
+
 david@gmail.com  =  admin user
+
 zoro@gmail.com  =  normal user
 
 password for all: Aa123456!
