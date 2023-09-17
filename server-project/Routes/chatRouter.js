@@ -21,7 +21,7 @@ router.get("/activeChats", async (req, res) => {
   const userID = req.query.userID;
 
   try {
-    // Fetch all the chats where the connected user is a participant
+    // Fetches all the chats where the connected user is a participant
     const chats = await Chat.find({
       $or: [{ senderID: userID }, { recepientID: userID }],
     }).sort({ timestamp: -1 });
@@ -37,12 +37,11 @@ router.get("/activeChats", async (req, res) => {
         String(chat.recepientID) === String(userID) ? "You: " : "";
 
       if (!(String(otherUserID) in activeChats)) {
-        // TODO: Fetch user details from User model if necessary
         const otherUserDetails = await User.findById(otherUserID);
 
         activeChats[String(otherUserID)] = {
           otherUserID: otherUserID,
-          otherUserName: otherUserDetails.firstName, // You'll have to fetch this from your User model
+          otherUserName: otherUserDetails.firstName,
           lastMessage: {
             content: contentPrefix + chat.content,
             time: chat.time,

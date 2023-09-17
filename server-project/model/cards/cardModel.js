@@ -57,7 +57,6 @@ const cardSchema = new mongoose.Schema({
 
     maxlength: 1024,
   },
-  // imageAlt: { type: String, minlength: 6, maxlength: 256 },
 
   createdAt: {
     type: Date,

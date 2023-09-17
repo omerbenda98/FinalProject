@@ -28,7 +28,7 @@ const charities = [
 ];
 
 function DonationPage() {
-  const [donationAmount, setDonationAmount] = useState(0); // Default amount
+  const [donationAmount, setDonationAmount] = useState(0);
 
   const handlePresetAmountClick = (amount) => {
     setDonationAmount(amount);
@@ -36,7 +36,6 @@ function DonationPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Payment processing logic commented out for now
   };
 
   return (

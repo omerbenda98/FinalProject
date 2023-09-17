@@ -49,7 +49,7 @@ const CardComp = ({ id, name, img, height, weight, lifeSpan }) => {
 };
 
 CardComp.propTypes = {
-  id: propTypes.number.isRequired, // assuming the id is always required for navigation purposes
+  id: propTypes.number.isRequired,
   name: propTypes.string.isRequired,
   img: propTypes.string.isRequired,
   height: propTypes.string.isRequired,

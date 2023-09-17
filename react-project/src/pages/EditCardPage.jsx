@@ -5,17 +5,14 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
 import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-
 import ROUTES from "../routes/ROUTES";
 import validateEditSchema, {
   validateEditCardParamsSchema,
 } from "../validation/editValidation";
-import { CircularProgress } from "@mui/material";
 import atom from "../logo.svg";
 import { toast } from "react-toastify";
 import Loader from "../components/Loader";
@@ -28,7 +25,7 @@ const EditCardPage = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [inputsErrorsState, setInputsErrorsState] = useState({});
   const navigate = useNavigate();
-  const { file, preview, handleFileChange, handleUpload } = useFileUpload();
+  const { preview, handleFileChange, handleUpload } = useFileUpload();
 
   useEffect(() => {
     (async () => {
@@ -63,13 +60,10 @@ const EditCardPage = () => {
 
   const handleFileUpload = async () => {
     try {
-      const newImageUrl = await handleUpload(setInputState); // here, handleUpload should be a function that uploads the file to your server and returns the URL of the uploaded file on the server
+      const newImageUrl = await handleUpload(setInputState); // here, handleUpload is a function that uploads the file to the server and returns the URL of the uploaded file on the server
       if (newImageUrl) {
-        console.log("File uploaded successfully:", newImageUrl);
         setInputState((prev) => ({ ...prev, imageUrl: newImageUrl }));
         URL.revokeObjectURL(preview);
-      } else {
-        console.log("No file was uploaded");
       }
       return newImageUrl;
     } catch (error) {
@@ -85,7 +79,7 @@ const EditCardPage = () => {
       }
       const url = URL.createObjectURL(file);
 
-      setInputState((prev) => ({ ...prev, imageUrl: url })); // setting the url property with a URL string
+      setInputState((prev) => ({ ...prev, imageUrl: url }));
     }
     handleFileChange(event);
   };
@@ -118,10 +112,12 @@ const EditCardPage = () => {
     setInputState(newInputState);
 
     const joiResponse = validateEditSchema(newInputState);
+
     if (!joiResponse) {
       setIsDisabled(false);
       setInputsErrorsState(null);
     } else {
+      console.log(inputState);
       setInputsErrorsState(joiResponse);
       setIsDisabled(true);
     }

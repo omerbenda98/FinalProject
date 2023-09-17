@@ -8,7 +8,6 @@
   background-repeat: no-repeat;
   padding-top: 20px;
   padding-bottom: 20px;
-  /* margin-bottom: 40px; */
 }
 .home-pages-buttons {
   display: flex;
@@ -50,14 +49,13 @@
 .card-grid {
   width: 100%;
 }
-/* @media (max-width: 600px) {
-  .homeImg {
-    width: 100vw;
-  }
-} */
 
 @media (max-width: 900px) {
   .card-grid {
     width: 100vw;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

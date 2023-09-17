@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -6,11 +6,9 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import ROUTES from "../routes/ROUTES";
 import validateLoginSchema from "../validation/loginValidation";
 import useLoggedIn from "../hooks/useLoggedIn";
@@ -30,12 +28,6 @@ const LoginPage = () => {
   const isBiz = useBiz();
   const navigate = useNavigate();
   const [isDisabled, setIsDisabled] = useState(true);
-
-  // useEffect(() => {
-  //   if (loggedIn) {
-  //     navigate(ROUTES.HOME);
-  //   }
-  // }, [loggedIn]);
 
   const handleBtnClick = async (ev) => {
     try {

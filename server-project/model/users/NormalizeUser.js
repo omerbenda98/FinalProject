@@ -1,4 +1,3 @@
-// NormalizeUser.js
 const normalizeUser = (user) => {
   return {
     ...user,

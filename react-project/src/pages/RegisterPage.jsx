@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import Avatar from "@mui/material/Avatar";
+import { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -7,17 +6,13 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import Alert from "@mui/material/Alert";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-
 import validateRegisterSchema from "../validation/registerValidation";
 import ROUTES from "../routes/ROUTES";
-import useLoggedIn from "../hooks/useLoggedIn";
 import UserAvatar from "../components/Navbar/NavProfile";
 import useFileUpload from "../hooks/useFileUpload";
 
@@ -44,7 +39,7 @@ const RegisterPage = () => {
   // const loggedIn = useLoggedIn();
   const navigate = useNavigate();
 
-  const { file, preview, handleFileChange, handleUpload } = useFileUpload();
+  const { preview, handleFileChange, handleUpload } = useFileUpload();
 
   const handleFileUpload = async () => {
     const newImageUrl = await handleUpload(setInputState);
@@ -63,11 +58,11 @@ const RegisterPage = () => {
       setInputsErrorsState(joiResponse);
       if (joiResponse) {
         toast.error("oops");
-        console.log("response from joi " + joiResponse);
+
         return;
       }
       await handleFileUpload();
-      const { data } = await axios.post("/users/register", {
+      await axios.post("/users/register", {
         firstName: inputState.firstName,
         middleName: inputState.middleName,
         lastName: inputState.lastName,
@@ -262,43 +257,7 @@ const RegisterPage = () => {
                   </Alert>
                 )}
               </Grid>
-              {/* <Grid item xs={6}>
-                <TextField
-                  name="imageUrl"
-                  label="ImgUrl"
-                  type="imageUrl"
-                  id="imageUrl"
-                  autoComplete="imageUrl"
-                  value={inputState.imageUrl}
-                  onChange={handleInputChange}
-                />
-                {inputsErrorsState && inputsErrorsState.imageUrl && (
-                  <Alert severity="warning">
-                    {inputsErrorsState.imageUrl.map((item) => (
-                      <div key={"imgUrl-errors" + item}>{item}</div>
-                    ))}
-                  </Alert>
-                )}
-              </Grid>
 
-              <Grid item xs={6}>
-                <TextField
-                  name="imageAlt"
-                  label="ImgAlt"
-                  type="imageAlt"
-                  id="imageAlt"
-                  autoComplete="imageAlt"
-                  value={inputState.imageAlt}
-                  onChange={handleInputChange}
-                />
-                {inputsErrorsState && inputsErrorsState.imageAlt && (
-                  <Alert severity="warning">
-                    {inputsErrorsState.imageAlt.map((item) => (
-                      <div key={"imgAlt-errors" + item}>{item}</div>
-                    ))}
-                  </Alert>
-                )}
-              </Grid> */}
               <Grid item xs={6}>
                 <TextField
                   name="state"

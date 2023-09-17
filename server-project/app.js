@@ -1,6 +1,5 @@
 require("./DB/connectToDb");
 const initialData = require("./initialData/initialData");
-// require("./primeryData/primeryCards")();
 const express = require("express");
 const app = express();
 const http = require("http");
@@ -16,8 +15,9 @@ const { validateChat } = require("./validation/chatValidation");
 const { Server } = require("socket.io");
 const normalizeChat = require("./model/chats/NormalizeChat");
 const multer = require("multer");
+const config = require("config");
+const jwt = require("jsonwebtoken");
 
-// Create an HTTP server
 const server = http.createServer(app);
 
 // Attach socket.io to the server
@@ -37,12 +37,12 @@ io.on("connection", (socket) => {
   // When a message is sent
   socket.on("send_message", async (data) => {
     try {
-      // Validate incoming data first
+      // Validates incoming data first
       const { error } = validateChat(data);
 
       if (error) {
         console.error("Validation error:", error.details[0].message);
-        return res.status(400).send(error.details[0].message); // return early if validation fails
+        return res.status(400).send(error.details[0].message); // returns early if validation fails
       }
       // Create new chat and save it only if validation passes
       const normalizedMessage = normalizeChat(
@@ -58,17 +58,35 @@ io.on("connection", (socket) => {
     }
   });
 
-  // When a user leaves a room
   socket.on("leaveRoom", (roomId) => {
     socket.leave(roomId);
   });
 });
+
+// validates token and sends a response to check for invalid/old token
+app.get("/api/validate-token", (req, res) => {
+  const token = req.headers.authorization?.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({ valid: false, message: "Token required" });
+  }
+
+  jwt.verify(token, config.get("jwtKey"), (err, user) => {
+    if (err) {
+      return res.status(401).json({ valid: false, message: "Token invalid" });
+    }
+
+    return res.json({ valid: true, user });
+  });
+});
+
+// multer used for file upload to 'uploads' folder
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./uploads"); // Set the destination. Make sure this folder exists.
+    cb(null, "./uploads");
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname); // Set the filename with the current date to avoid name collisions
+    cb(null, Date.now() + "-" + file.originalname);
   },
 });
 const upload = multer({ storage: storage });
@@ -83,10 +101,6 @@ app.post("/api/upload", upload.single("profilePic"), (req, res) => {
 initialData();
 app.use(express.static("public"));
 app.use("/uploads", express.static("uploads"));
-// app.use(
-//   "/images",
-//   express.static('"http://localhost:3000/initialData/images" data/images')
-// );
 
 app.use(morgan(chalk.cyan(":method :url :status :response-time ms")));
 app.use(cors());

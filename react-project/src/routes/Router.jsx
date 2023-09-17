@@ -12,7 +12,6 @@ import AboutPage from "../pages/AboutPage";
 import MyCardsPage from "../pages/MyCardsPage";
 import CreateCardPage from "../pages/CreateCardPage";
 import CRMpage from "../pages/CRMpage";
-import MoreInfoPage from "../pages/MoreInfoPage";
 import AdoptionPage from "../pages/AdoptionPage";
 import BreedPage from "../pages/BreedPage";
 import ChatPage from "../pages/ChatPage";
@@ -29,7 +28,6 @@ const Router = () => {
       <Route path={ROUTES.ADOPTION} element={<AdoptionPage />} />
       <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
       <Route path={ROUTES.DONATION} element={<DonationPage />} />
-      <Route path="/moreInfo/:id" element={<MoreInfoPage />} />
       <Route
         path={ROUTES.MYCARDS}
         element={

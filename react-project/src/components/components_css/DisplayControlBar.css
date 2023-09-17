@@ -1,13 +1,12 @@
 .display-buttons button {
-  width: 33%;
-
+  width: 33vw;
+  height: 3rem;
   color: black;
-
-  background-color: rgba(238, 238, 238, 0.555);
+  background-color: rgba(238, 238, 238, 0.822);
 }
 
 .display-buttons {
-  width: 100vw;
+  width: 99vw;
 }
 @media (max-width: 600px) {
   .slide-btn {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -26,15 +25,13 @@ const ProfilePage = () => {
   const [originalInputState, setOriginalInputState] = useState({});
   const [inputsErrorsState, setInputsErrorsState] = useState({});
   const [isDisabled, setIsDisabled] = useState(false);
-  // const [file, setFile] = useState(null);
   const [editMode, setEditMode] = useState(false);
-  // const [preview, setPreview] = useState(null);
   const navigate = useNavigate();
   const loggedIn = useLoggedIn();
   const isAdmin = useAdmin();
   const isBiz = useBiz();
 
-  const { file, preview, handleFileChange, handleUpload } = useFileUpload();
+  const { preview, handleFileChange, handleUpload } = useFileUpload();
 
   const handleFileUpload = async () => {
     const newImageUrl = await handleUpload(setInputState, setUserInfo);
@@ -58,7 +55,7 @@ const ProfilePage = () => {
 
       if (joiResponse) {
         toast.error("oops");
-        console.log("response from joi " + JSON.stringify(joiResponse));
+
         return;
       }
 

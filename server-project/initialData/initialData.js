@@ -19,21 +19,19 @@ const initialData = async () => {
       return;
     }
 
-    let lastUserId = null; // This will store the ID of the last user created
+    let lastUserId = null;
 
     for (let user of usersData) {
       user.password = await generateHashPassword(user.password);
       let userInstance = new User(user);
-      // Assuming normalizeUser modifies the user in-place and doesn't return a new object
       normalizeUser(userInstance);
       const savedUser = await userInstance.save();
-      lastUserId = savedUser._id; // Update the lastUserId each time a user is saved
+      lastUserId = savedUser._id;
     }
 
     for (let cardData of cardsData) {
       let cardInstance = new Card(cardData);
-      cardInstance.user_id = lastUserId; // Assign the ID of the last user created to the card's user_id
-      // Assuming normalizeCard modifies the card in-place and doesn't return a new object
+      cardInstance.user_id = lastUserId;
       normalizeCard(cardInstance, lastUserId.toString());
       await cardInstance.save();
     }

@@ -1,17 +1,25 @@
 .carousel-container {
   position: relative;
   background-color: rgba(57, 57, 57, 0.9);
-  /* overflow: scroll; */
+  margin-bottom: 8rem;
+  margin-left: 3rem;
   width: 50vw;
-  /* height: 30rem;  */
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.509);
-  margin-left: 28rem;
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
   margin-top: 5rem;
 }
-
+.big-carousel-container {
+  width: 97.8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .carousel-container img {
   width: 100%;
-  height: auto;
+
+  object-fit: contain;
 }
 
 .carousel-container button {
@@ -25,11 +33,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.see-more-btn {
-  /* position: absolute; */
-  /* background-color: red; */
-  top: 90%;
-}
+
 .carousel-container button:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }

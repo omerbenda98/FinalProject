@@ -10,7 +10,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ROUTES from "../routes/ROUTES";
-import atom from "../logo.svg";
 import { toast } from "react-toastify";
 import validateCreateSchema from "../validation/createValidation";
 import Loader from "../components/Loader";
@@ -35,18 +34,15 @@ const CreateCardPage = () => {
   const [inputsErrorsState, setInputsErrorsState] = useState({});
   const navigate = useNavigate();
 
-  const { file, preview, handleFileChange, handleUpload } = useFileUpload();
+  const { preview, handleFileChange, handleUpload } = useFileUpload();
 
   const handleFileUpload = async () => {
     try {
       const newImageUrl = await handleUpload(setInputState);
       if (newImageUrl) {
-        console.log("File uploaded successfully:", newImageUrl);
         setInputState((prev) => ({ ...prev, imageUrl: newImageUrl }));
-      } else {
-        console.log("No file was uploaded");
       }
-      URL.revokeObjectURL(preview); // Revoke the blob URL after uploading the file to the server
+      URL.revokeObjectURL(preview);
       return newImageUrl;
     } catch (error) {
       console.error("File upload failed:", error);
@@ -57,7 +53,7 @@ const CreateCardPage = () => {
     const file = event.target.files[0];
     if (file) {
       const url = URL.createObjectURL(file);
-      setInputState((prev) => ({ ...prev, imageUrl: url })); // Use the blob URL for previewing the image in the UI
+      setInputState((prev) => ({ ...prev, imageUrl: url }));
     }
     handleFileChange(event);
   };
@@ -68,8 +64,6 @@ const CreateCardPage = () => {
       setInputsErrorsState(joiResponse);
       if (!joiResponse) {
         inputState.imageUrl = await handleFileUpload();
-
-        // At this point, inputState.imageUrl should already be set to the permanent URL returned by the server
 
         await axios.post("/cards", inputState);
 

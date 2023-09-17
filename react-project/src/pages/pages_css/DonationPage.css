@@ -77,7 +77,7 @@
 .donation-container img {
   height: 40vh;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .pet-animation {
     display: none;
   }

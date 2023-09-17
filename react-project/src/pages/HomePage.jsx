@@ -1,19 +1,16 @@
-import { Box, CircularProgress, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import { toast } from "react-toastify";
 import useQueryParams from "../hooks/useQueryParams";
 import { useSelector } from "react-redux";
 import jwt_decode from "jwt-decode";
 import Typography from "@mui/material/Typography";
-import MoreInfoPage from "./MoreInfoPage";
 import Navbar from "../components/Navbar/Navbar";
 import "./pages_css/Neon.css";
 import "./pages_css/Homepage.css";
 import CardComp from "../components/CardComp";
 import Loader from "../components/Loader";
-import ChatPage from "./ChatPage";
 import DisplayControlBar from "../components/DisplayControlBar";
 import ListComponent from "../components/ListComponent";
 import CarouselComponent from "../components/CarouselComponent";
@@ -40,9 +37,6 @@ const HomePage = () => {
   const totalItems = cardsArr ? cardsArr.length : 0;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  // ... (Your previous code)
-
-  // Pagination controls
   const nextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage((prevPage) => prevPage + 1);
@@ -136,7 +130,15 @@ const HomePage = () => {
       </Box>
       <DisplayControlBar setDisplayType={setDisplayType} />
       <br />
-      <Grid container spacing={6} ml={0} width={"100%"}>
+      <Grid
+        container
+        spacing={6}
+        sx={{
+          ml: 3,
+          mt: 3,
+        }}
+        width={"90%"}
+      >
         {displayType === "slide" ? (
           <CarouselComponent items={cardsArr} seeMore={seeMore} />
         ) : (
@@ -170,8 +172,7 @@ const HomePage = () => {
                     item
                     xs={10}
                     md={6}
-                    lg={3}
-                    sx={{ m: { xs: 0, lg: 5, md: 0 }, ml: { lg: "5rem" } }}
+                    lg={4}
                     key={item.id + Date.now()}
                     className="card-grid"
                     justify="center"

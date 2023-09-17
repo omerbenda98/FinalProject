@@ -1,20 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ChatSchema = new mongoose.Schema({
-  roomID:{
-    type:String,
-    ref:'User',
-    required:true
+  roomID: {
+    type: String,
+    ref: "User",
+    required: true,
   },
   senderID: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   recepientID: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   content: {
     type: String,
@@ -25,18 +25,18 @@ const ChatSchema = new mongoose.Schema({
   time: {
     type: String,
     default: Date.now,
-    required: true
+    required: true,
   },
-  author:{
+  author: {
     type: String,
-    required:true,
+    required: true,
     minlength: 2,
     maxlength: 256,
   },
   timestamp: {
     type: Number,
-    default: () => Date.now(), // Return a timestamp when a new document is created
+    default: () => Date.now(),
   },
 });
 
-module.exports = mongoose.model('Chat', ChatSchema);
+module.exports = mongoose.model("Chat", ChatSchema);

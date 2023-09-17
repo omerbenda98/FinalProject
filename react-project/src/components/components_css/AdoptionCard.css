@@ -35,7 +35,7 @@
 }
 
 .adoptionCard .cardImg {
-  width: 100%; /* or whatever tiny size you want */
+  width: 100%;
   height: 15rem;
   object-fit: cover;
 }

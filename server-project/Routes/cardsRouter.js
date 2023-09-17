@@ -7,9 +7,8 @@ const { validateCard } = require("../validation/cardValidation");
 const normalizeCard = require("../model/cards/NormalizeCard");
 const permissionsMiddleware = require("../middlewares/permissions");
 const validateObjectId = require("../validation/idValidation");
-// const cardsService = require("../model/cards/cardsService");
 
-/********** סעיף 7 **********/
+// retrievs all cards
 router.get("/cards", async (req, res) => {
   try {
     const cards = await Card.find();
@@ -19,6 +18,8 @@ router.get("/cards", async (req, res) => {
     return res.status(500).send(error.message);
   }
 });
+
+// retrievs all cards owned by the connected user
 router.get("/my-cards", auth, async (req, res) => {
   try {
     let user = req.user;
@@ -31,6 +32,8 @@ router.get("/my-cards", auth, async (req, res) => {
     return res.status(500).send(error.message);
   }
 });
+
+// retrievs card specific card
 router.get("/:id", async (req, res) => {
   try {
     const { error } = validateObjectId(req.params.id);
@@ -43,8 +46,8 @@ router.get("/:id", async (req, res) => {
     res.status(400).json(err);
   }
 });
-/********** סעיף 9 **********/
 
+// creates a new card
 router.post("/", auth, permissionsMiddleware(true, false), async (req, res) => {
   try {
     const user = req.user;
@@ -74,6 +77,7 @@ router.post("/", auth, permissionsMiddleware(true, false), async (req, res) => {
   }
 });
 
+// edit a specific card
 router.put("/:id", auth, async (req, res) => {
   try {
     let user = req.user;
@@ -116,6 +120,7 @@ router.put("/:id", auth, async (req, res) => {
   }
 });
 
+// delete a specific card
 router.delete("/:id", auth, async (req, res) => {
   try {
     let user = req.user;

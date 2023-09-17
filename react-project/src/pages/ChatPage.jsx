@@ -8,9 +8,7 @@ const ChatPage = () => {
 
   return (
     <div className="chat-page-container">
-      {/* <img src="./petanimation.png" /> */}
       <Chat socket={socket} userID={tokenId} otherUserID={userId} />
-      {/* <img src="./petanimation.png" /> */}
     </div>
   );
 };

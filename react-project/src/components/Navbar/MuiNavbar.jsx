@@ -9,7 +9,6 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import DiamondIcon from "@mui/icons-material/Diamond";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Switch } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -22,6 +21,7 @@ import NavLinkComponent from "./NavLinkComponent";
 import "./navbar_css/MuiNavbar.css";
 import { authActions } from "../../store/auth";
 import Sidebar from "./Sidebar";
+import PetsIcon from "@mui/icons-material/Pets";
 
 // access to all
 const pages = [
@@ -115,15 +115,17 @@ const MuiNavbar = () => {
         <Toolbar>
           {isLoggedIn && <Sidebar />}
           <IconButton onClick={handleHomeIconClick}>
-            <DiamondIcon />
+            <PetsIcon sx={{ fontSize: "4rem" }} />
+
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{ display: { xs: "none", md: "inline" } }}
+            >
+              DogHome
+            </Typography>
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{ display: { xs: "none", md: "inline" } }}
-          >
-            LOGO
-          </Typography>
+
           {/* main navbar */}
           <Box
             sx={{

@@ -11,6 +11,7 @@ const chalk = require("chalk");
 const normalizeUser = require("../model/users/NormalizeUser");
 const validateObjectId = require("../validation/idValidation");
 
+// creates/registers a new users
 router.post("/register", async (req, res) => {
   const { error } = validateRegistration(req.body);
   if (error) {
@@ -25,15 +26,13 @@ router.post("/register", async (req, res) => {
   }
   let userData = normalizeUser(req.body);
   user = new User({ ...userData });
-  // user = new User(
-  //   _.pick(req.body, ["name", "email", "password", "biz", "cards"])
-  // );
 
   user.password = generateHashPassword(user.password);
   await user.save();
   res.send(_.pick(user, ["_id", "name", "email"]));
 });
 
+// returns a token when logging in
 router.post("/login", async (req, res) => {
   const { error } = validateSignin(req.body);
   if (error) {
@@ -58,6 +57,7 @@ router.post("/login", async (req, res) => {
   });
 });
 
+// gets all the users
 router.get("/getAllUsers", auth, async (req, res) => {
   try {
     if (!req.user || !req.user.isAdmin) {
@@ -70,6 +70,7 @@ router.get("/getAllUsers", auth, async (req, res) => {
   }
 });
 
+// gets connected users info
 router.get("/userInfo", auth, (req, res) => {
   let user = req.user;
   User.findById(user._id)
@@ -78,6 +79,7 @@ router.get("/userInfo", auth, (req, res) => {
     .catch((errorsFromMongoose) => res.status(500).send(errorsFromMongoose));
 });
 
+// edits connected users info
 router.put("/userInfo", auth, async (req, res) => {
   try {
     const { error } = validateEditUser(req.body);
@@ -92,7 +94,7 @@ router.put("/userInfo", auth, async (req, res) => {
 
     const token = generateAuthToken(updatedUserData);
 
-    // Send the new token to the client
+    // Sends the new token to the client
     res.send({
       user: updatedUserData.toObject(),
       token: { token },
@@ -103,6 +105,7 @@ router.put("/userInfo", auth, async (req, res) => {
   }
 });
 
+// edits specific users info
 router.put("/userInfo/:id", auth, async (req, res) => {
   try {
     const { error } = validateEditUser(req.body);
@@ -120,6 +123,7 @@ router.put("/userInfo/:id", auth, async (req, res) => {
   }
 });
 
+// deletes a specific user
 router.delete("/deleteUser/:id", auth, async (req, res) => {
   try {
     const { error } = validateObjectId(req.params.id);

@@ -1,4 +1,3 @@
-import { Box, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -41,8 +40,8 @@ const AdoptionPage = () => {
   }
 
   return (
-    <Box className="adoption-container">
-      <Box className="AdoptionPageHeader">
+    <div className="adoption-container">
+      <div className="AdoptionPageHeader">
         <Typography className="neon" variant="h2">
           Welcome to the adoption page!
         </Typography>
@@ -54,18 +53,11 @@ const AdoptionPage = () => {
         >
           Here you can Explore and find a dog to adopt.
         </Typography>
-      </Box>
+      </div>
 
-      <Grid container spacing={10}>
+      <div className="adoption-grid-container">
         {cardsArr.map((item) => (
-          <Grid
-            item
-            xs={10}
-            md={6}
-            lg={3}
-            sx={{ ml: { xs: 4, lg: 8, md: 3 } }}
-            key={item._id + Date.now()}
-          >
+          <div key={item._id + Date.now()} className="adoption-grid-item">
             <AdoptionCard
               name={item.name}
               age={item.age}
@@ -81,10 +73,10 @@ const AdoptionPage = () => {
               userId={item.user_id}
               onDelete={onDelete}
             />
-          </Grid>
+          </div>
         ))}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   );
 };
 

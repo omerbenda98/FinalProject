@@ -1,23 +1,16 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
-
 import IconButton from "@mui/material/IconButton";
-
-// Import icons from MUI Icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import "./components_css/Footer.css";
-import { Link, useNavigate } from "react-router-dom";
-import ROUTES from "../routes/ROUTES";
+import { Link } from "react-router-dom";
 
 const FooterComponent = () => {
-  const navigate = useNavigate();
-
   return (
     <Box className="footer-container" sx={{ py: 10 }}>
       <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 2 }}>
@@ -50,15 +43,9 @@ const FooterComponent = () => {
         </Link>
       </Box>
 
-      <Typography
-        variant="body2"
-        align="center"
-        color="text.secondary"
-        sx={{ mb: 2 }}
-      >
-        For inquiries:{" "}
-        <Link href="mailto:info@example.com">info@example.com</Link>
-      </Typography>
+      <Box align="center" color="text.secondary" sx={{ mb: 2 }}>
+        For inquiries: <Typography>omerbenda98@gmail.com</Typography>
+      </Box>
 
       <Typography variant="body2" align="center" color="text.secondary">
         &copy; {new Date().getFullYear()} Omer Ben David. All rights reserved.

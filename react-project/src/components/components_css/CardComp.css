@@ -174,7 +174,6 @@
   border-radius: 50%;
   background-color: #ffbb66;
   position: relative;
-  /* filter: blur(15px); */
   animation: floating 2600ms infinite linear;
 }
 
@@ -196,7 +195,7 @@
   animation-delay: -1800ms;
 }
 .css-1jpztpb-MuiGrid-root > .MuiGrid-item {
-  padding-left: 1rem !important; /* or any other value you prefer */
+  padding-left: 1rem !important;
 }
 
 @keyframes floating {

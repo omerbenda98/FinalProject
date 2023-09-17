@@ -70,7 +70,6 @@ const AdoptionCard = ({
           <p className="cardDescription">My Age : {age}</p>
           <p className="cardDescription"> My Breed : {breed}</p>
         </div>
-        {/* <p className="cardDescription">{description}</p> */}
         <div>
           <h6 className="cardHeaders">Where Do I Live :</h6>
           <p className="cardDescription">Country : {country}</p>
@@ -127,7 +126,7 @@ AdoptionCard.propTypes = {
   city: propTypes.string.isRequired,
   phone: propTypes.string.isRequired,
   onDelete: propTypes.func,
-  imgUrl: propTypes.string.isRequired,
+  imgUrl: propTypes.any,
   email: propTypes.string.isRequired,
 };
 

@@ -6,21 +6,18 @@ import {
   CssBaseline,
 } from "@mui/material";
 
-/* toast */
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import jwtDecode from "jwt-decode";
 import "./App.css";
 import MuiNavbar from "./components/Navbar/MuiNavbar";
-import Sidebar from "./components/Navbar/Sidebar";
-import Navbar from "./components/Navbar/Navbar";
 import FooterComponent from "./components/FooterComponent";
 import Router from "./routes/Router";
 import { useSelector } from "react-redux";
 import useLoggedIn from "./hooks/useLoggedIn";
 import useAdmin from "./hooks/useAdmin";
 import useBiz from "./hooks/useBiz";
-import { WidthFull } from "@mui/icons-material";
+import axios from "axios";
 
 const light = {
   palette: {
@@ -47,6 +44,37 @@ function App() {
     loggedIn();
   }, []);
 
+  //checking if token is valid, if not it deletes it. in case of old token that might be saved
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      try {
+        jwtDecode(token);
+      } catch (error) {
+        console.error("Invalid token:", error);
+        localStorage.removeItem("token");
+        return;
+      }
+
+      axios
+        .get("/validate-token", {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          if (response.data.valid === false) {
+            localStorage.removeItem("token");
+          }
+        })
+        .catch((error) => {
+          console.error("Error validating token:", error);
+          localStorage.removeItem("token");
+        });
+    }
+  }, []);
+
   const isDarkTheme = useSelector(
     (bigPie) => bigPie.darkThemeSlice.isDarkTheme
   );
@@ -66,14 +94,12 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-      <Container maxWidth={false} disableGutters id='mainContainer'>
+      <Container maxWidth={false} disableGutters id="mainContainer">
         <header>
-     
           <MuiNavbar />
           {/* <Sidebar /> */}
         </header>
         <main>
-          
           <Router />
           {/* <Navbar /> */}
         </main>

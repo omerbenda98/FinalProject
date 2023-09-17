@@ -11,17 +11,15 @@ const ListComponent = ({ name, img, height, weight, lifeSpan, origin, id }) => {
   return (
     <div className="list-item">
       <div className="icon">
-        <img src={img} alt="image" className="list-img"></img>
+        <img src={img} alt={name} className="list-img"></img>
         <div className="neon">origin : {origin}</div>
       </div>
       <div className="list-content">
         <span className="list-title neon">Breed : {name}</span>
         <div className="list-desc">
-          <div>height : {height} CM</div>
-          <div>weight : {weight.metric}</div>
-          {/* <p>lifeSpan : {lifeSpan}</p> */}
-
-          <div>lifeSpan : {lifeSpan}</div>
+          <div className="info-item">height : {height} CM </div>
+          <div className="info-item">weight : {weight.metric} </div>
+          <div className="info-item">lifeSpan : {lifeSpan}</div>
         </div>
       </div>
 

@@ -1,13 +1,10 @@
-import { Fragment } from "react";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { IconButton } from "@mui/material";
-import { Box, Grid, Typography } from "@mui/material";
-
-import CardComp from "../components/CardComp";
+import { Typography } from "@mui/material";
+import "./pages_css/MyCardsPage.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useSelector } from "react-redux";
 import jwt_decode from "jwt-decode";
 import ROUTES from "../routes/ROUTES";
 import "./pages_css/Neon.css";
@@ -16,18 +13,14 @@ import AdoptionCard from "../components/AdoptionCard";
 
 const MyCardsPage = () => {
   const [userData, setUserData] = useState(null);
-  const [cardsArr, setCardsArr] = useState([]);
-  const [isDataEmpty, setIsDataEmpty] = useState(false);
 
   const navigate = useNavigate();
-  const isAdmin = useSelector((bigPie) => bigPie.authSlice.isAdmin);
 
   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get("/cards/my-cards");
         setUserData(data);
-        setIsDataEmpty(true);
       } catch (err) {
         console.log("error from axios", err);
       }
@@ -56,7 +49,7 @@ const MyCardsPage = () => {
   }
 
   return (
-    <Fragment>
+    <div className="mycards-container">
       <Typography variant="h3" sx={{ textAlign: "center" }} className="neon">
         My Cards
       </Typography>
@@ -74,31 +67,29 @@ const MyCardsPage = () => {
           No cards created. Click add button below to add cards.
         </Typography>
       ) : (
-        <div className="mycards-container">
-          <Grid container spacing={2} className="mycards-grid">
-            {userData.map((item) => (
-              <Grid item xs={10} md={6} lg={3} key={item._id + Date.now()}>
-                <AdoptionCard
-                  name={item.name}
-                  age={item.age}
-                  breed={item.breed}
-                  description={item.description}
-                  country={item.country}
-                  city={item.city}
-                  phone={item.phone}
-                  email={item.email}
-                  id={item._id}
-                  imgUrl={item.imageUrl}
-                  userId={item.user_id}
-                  tokenId={getTokenId()}
-                  onDelete={onDelete}
-                />
-              </Grid>
-            ))}
-          </Grid>
+        <div className="mycards-grid-container">
+          {userData.map((item) => (
+            <div key={item._id + Date.now()} className="mycards-grid-item">
+              <AdoptionCard
+                name={item.name}
+                age={item.age}
+                breed={item.breed}
+                description={item.description}
+                country={item.country}
+                city={item.city}
+                phone={item.phone}
+                email={item.email}
+                id={item._id}
+                imgUrl={item.imageUrl}
+                userId={item.user_id}
+                tokenId={getTokenId()}
+                onDelete={onDelete}
+              />
+            </div>
+          ))}
         </div>
       )}
-    </Fragment>
+    </div>
   );
 };
 export default MyCardsPage;

@@ -1,7 +1,6 @@
 .charity-card {
   height: 300px;
   width: 96%;
-  /* margin-left: 2rem; */
   background-color: #4158d0;
   border-radius: 8px;
   color: white;
@@ -27,7 +26,6 @@
   justify-content: center;
   text-align: center;
   height: 100%;
-  /* filter: brightness(50%); */
 }
 
 .charity-card-content .charity-card-title {
