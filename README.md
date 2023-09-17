@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Welcome to our Dog Adoption Website, a platform where potential adopters can connect with business users who are looking to find new homes for dogs. Our website not only facilitates the adoption process but also provides an extensive directory of various dog breeds, curated through an external API.
+Welcome to my Dog Adoption Website, a platform where potential adopters can connect with business users who are looking to find new homes for dogs. The website not only facilitates the adoption process but also provides an extensive directory of various dog breeds, curated through an external API.
 
-Whether you are looking to adopt or put up a dog for adoption, our platform serves as the perfect bridge to meet your needs, featuring functionalities like real-time chat with chat history storage, breed exploration, and more. 
+  Whether you are looking to adopt or put up a dog for adoption, This platform serves as the perfect bridge to meet your needs, featuring functionalities like real-time chat with chat history storage, breed exploration, and more. 
 
 ## Getting Started
 
