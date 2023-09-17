@@ -8,13 +8,6 @@ Whether you are looking to adopt or put up a dog for adoption, our platform serv
 
 ## Getting Started
 
-### Prerequisites
-
-Before you begin, ensure you have installed the following:
-- Node.js
-- npm
-- MongoDB (local setup for development environment)
-
 ### Installation & Setup
 
 1. Clone the repository to your local machine.
@@ -24,12 +17,18 @@ Before you begin, ensure you have installed the following:
    Alternatively, for a production environment setup with a MongoDB cluster, use: ---->  npm start
 5. Next, navigate to the React application directory and start the React app using: ---->  npm start
 
-
 Upon starting the application in the production environment, initial data consisting of three cards and three users (admin, business, and normal users) will be created automatically.
+
+to sign in use one of the emails:
+john@gmail.com  =  business user (the 3 initial cards owner)
+david@gmail.com  =  admin user
+zoro@gmail.com  =  normal user
+
+password for all: Aa123456!
+
 
 ## Technologies Used
 
-Our project utilizes a stack of modern technologies to deliver a seamless experience. These technologies are categorized as follows:
 
 ### Frontend - React
 - Redux: Used for authentication.
@@ -59,7 +58,7 @@ Our project utilizes a stack of modern technologies to deliver a seamless experi
 - Dog Adoption Cards: Business users can create, edit, and delete dog adoption cards.
 - Real-Time Chat: Enables users to communicate in real time, with chat histories saved to the database.
 
-We hope our website makes the process of dog adoption smoother and happier for both the adopters and the ones putting up the dogs for adoption. Feel free to contribute and suggest improvements.
+
 
 
 
