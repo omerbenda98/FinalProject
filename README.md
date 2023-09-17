@@ -41,6 +41,7 @@ zoro@gmail.com  =  normal user
 
 password for all: Aa123456!
 
+NOTE! it may be needed to delete the old token if there is a problem.
 
 to sign in the production env on cluster mongoDB use this email:
 
