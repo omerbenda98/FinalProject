@@ -31,7 +31,7 @@ Welcome to my Dog Adoption Website, a platform where potential adopters can conn
 ```
 Upon starting the application in the production environment, initial data consisting of three cards and three users (admin, business, and normal users) will be created automatically.
 
-to sign in use one of the emails:
+to sign in the development env on local mongoDB use one of the emails:
 
 john@gmail.com  =  business user (the 3 initial cards owner)
 
@@ -41,6 +41,12 @@ zoro@gmail.com  =  normal user
 
 password for all: Aa123456!
 
+
+to sign in the production env on cluster mongoDB use this email:
+
+omerbenda98@gmail.com
+
+password: Aa123456!
 
 ## Technologies Used
 
