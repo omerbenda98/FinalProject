@@ -35,8 +35,6 @@ const RegisterPage = () => {
   });
   const [inputsErrorsState, setInputsErrorsState] = useState({});
   const [isDisabled, setIsDisabled] = useState(true);
-  // const [preview, setPreview] = useState(null);
-  // const loggedIn = useLoggedIn();
   const navigate = useNavigate();
 
   const { preview, handleFileChange, handleUpload } = useFileUpload();

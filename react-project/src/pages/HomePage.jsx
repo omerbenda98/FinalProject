@@ -48,6 +48,8 @@ const HomePage = () => {
       setCurrentPage((prevPage) => prevPage - 1);
     }
   };
+
+  // retrieving dog breeds from external api
   useEffect(() => {
     axios
       .get("https://api.thedogapi.com/v1/breeds", {
