@@ -30,11 +30,14 @@
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://omerbenda98.github.io/FinalProject ",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,5 +57,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8181/"
+  "proxy": "http://localhost:8181/",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
 }
