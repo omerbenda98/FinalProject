@@ -109,7 +109,7 @@ app.use("/api/users", usersRouter);
 app.use("/api/cards", cardsRouter);
 app.use("/api/chats", chatRouter);
 
-const PORT = 8181;
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () =>
   console.log(chalk.blueBright.bold(`server run on: http://localhost:${PORT}`))
 );
