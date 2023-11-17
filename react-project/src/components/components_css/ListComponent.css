@@ -125,6 +125,9 @@
     flex-direction: column;
     height: 8rem;
   }
+  .origin {
+    display: none;
+  }
 }
 @media (max-width: 900px) {
   .list-item {
