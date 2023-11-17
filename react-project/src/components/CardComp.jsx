@@ -35,11 +35,10 @@ const CardComp = ({ id, name, img, height, weight, lifeSpan }) => {
               </small>
 
               <small className="badge">height in metric : {height} CM</small>
-              <div className="button-group">
-                <button onClick={handleSelectBreedBtnClick} className="seeMore">
-                  See More
-                </button>
-              </div>
+
+              <button onClick={handleSelectBreedBtnClick} className="seeMore">
+                See More
+              </button>
             </div>
           </div>
         </div>
