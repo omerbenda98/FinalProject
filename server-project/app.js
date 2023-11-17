@@ -23,7 +23,7 @@ const server = http.createServer(app);
 // Attach socket.io to the server
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://omerbenda98.github.io/FinalProject",
     methods: ["GET", "POST"],
   },
 });
@@ -109,7 +109,7 @@ app.use("/api/users", usersRouter);
 app.use("/api/cards", cardsRouter);
 app.use("/api/chats", chatRouter);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8181;
 server.listen(PORT, () =>
   console.log(chalk.blueBright.bold(`server run on: http://localhost:${PORT}`))
 );
